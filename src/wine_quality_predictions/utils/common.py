@@ -13,7 +13,7 @@ from box.exceptions import BoxValueError
 def read_yaml(path_to_yaml: Path)-> ConfigBox:
     try:
         with open(path_to_yaml) as yaml_files:
-            content = yaml.safe_load(yaml_file)
+            content = yaml.safe_load(yaml_files)
             logger.info(f"yaml file: {path_to_yaml} loaded succesfully")
             return ConfigBox(content)
     except BoxValueError:
